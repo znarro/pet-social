@@ -21,7 +21,7 @@ const Post = ({ post }) => {
           <Avatar picture={post.owner.picture} />
           <Author authorInfo={post.owner} />
           <Message message={post} />
-          <Tags />
+          <Tags tags={post.tags} />
         </Grid>
       </Container>
     </Box>
