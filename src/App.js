@@ -1,18 +1,17 @@
 import React from 'react';
-import { ChakraProvider, Box, Grid, Heading, theme } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { ChakraProvider, Box, theme } from '@chakra-ui/react';
 
 import PostList from './components/PostList';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <Heading my={5}>Pet Social</Heading>
-          <PostList />
-        </Grid>
+        <Header />
+        <PostList />
+        <Footer />
       </Box>
     </ChakraProvider>
   );

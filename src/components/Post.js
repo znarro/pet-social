@@ -10,7 +10,7 @@ import {
 
 const Post = ({ user }) => {
   return (
-    <Box border="1px" borderColor="gray.200" borderRadius="md" p={5}>
+    <Box border="1px" borderColor="blue.200" borderRadius="md" p={5}>
       <Container maxW="container.md">
         <Grid
           h="200px"
@@ -26,15 +26,15 @@ const Post = ({ user }) => {
               alt={user.lastName}
             />
           </GridItem>
-          <GridItem colSpan={3} bg="papayawhip">
+          <GridItem colSpan={3} bg="lightblue">
             <Heading as="h2" size="md">
               {`${user.title}. ${user.firstName}${user.lastName}`}
             </Heading>
           </GridItem>
-          <GridItem colSpan={3} bg="papayawhip">
+          <GridItem colSpan={3} bg="lightblue">
             Comment
           </GridItem>
-          <GridItem colSpan={4} bg="tomato">
+          <GridItem colSpan={4} bg="grey">
             Tags
           </GridItem>
         </Grid>
