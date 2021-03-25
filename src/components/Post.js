@@ -1,42 +1,27 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Grid,
-  GridItem,
-  Image,
-  Heading,
-} from '@chakra-ui/react';
+import { Box, Container, Grid } from '@chakra-ui/react';
 
-const Post = ({ user }) => {
+import Avatar from './Avatar';
+import Author from './Author';
+import Message from './Message';
+import Tags from './Tags';
+
+const Post = ({ post }) => {
   return (
-    <Box border="1px" borderColor="blue.200" borderRadius="md" p={5}>
+    <Box border="1px" borderColor="blue.200" borderRadius="md" p={5} my={8}>
       <Container maxW="container.md">
         <Grid
-          h="200px"
-          templateRows="repeat(2, 1fr) 50px"
-          templateColumns="repeat(4, 1fr)"
+          templateRows="repeat(2, auto) 50px"
+          templateColumns="repeat(5, 1fr)"
+          templateAreas=" 'avatar message message message message'
+                          'author message message message message'
+                          'tags tags tags tags tags'"
           gap={4}
         >
-          <GridItem rowSpan={2} colSpan={1} alignItems="center">
-            <Image
-              borderRadius="full"
-              objectFit="cover"
-              src={user.picture}
-              alt={user.lastName}
-            />
-          </GridItem>
-          <GridItem colSpan={3} bg="lightblue">
-            <Heading as="h2" size="md">
-              {`${user.title}. ${user.firstName}${user.lastName}`}
-            </Heading>
-          </GridItem>
-          <GridItem colSpan={3} bg="lightblue">
-            Comment
-          </GridItem>
-          <GridItem colSpan={4} bg="grey">
-            Tags
-          </GridItem>
+          <Avatar picture={post.owner.picture} />
+          <Author authorInfo={post.owner} />
+          <Message message={post} />
+          <Tags />
         </Grid>
       </Container>
     </Box>
